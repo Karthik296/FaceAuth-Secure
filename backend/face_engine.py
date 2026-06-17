@@ -75,15 +75,7 @@ def check_liveness(face_img: np.ndarray) -> tuple[bool, str]:
     max_val = np.max(magnitude_spectrum)
     freq_ratio = max_val / (mean_val + 1e-5)
 
-    # 3. HSV Specular Reflection / Glare Detection
-    hsv = cv2.cvtColor(face_img, cv2.COLOR_BGR2HSV)
-    _, s, v = cv2.split(hsv)
-    
-    # Glare from screen glass has high brightness (V > 235) and low saturation (S < 45)
-    glare_pixels = np.sum((s < 45) & (v > 235))
-    glare_ratio = glare_pixels / (h * w)
-
-    print(f"Anti-Spoofing Metrics -> Laplacian: {laplacian_var:.1f}, Moire Freq Ratio: {freq_ratio:.2f}, Glare Ratio: {glare_ratio:.4f}")
+    print(f"Anti-Spoofing Metrics -> Laplacian: {laplacian_var:.1f}, Moire Freq Ratio: {freq_ratio:.2f}")
 
     # Thresholds:
     # A: Laplacian variance threshold (Real face usually > 45.0, screens/photos drop < 30.0)
@@ -93,10 +85,6 @@ def check_liveness(face_img: np.ndarray) -> tuple[bool, str]:
     # B: Moire pattern peak frequency ratio threshold (Real face usually < 4.5, screens peak > 6.0)
     if freq_ratio > 6.5:
         return False, f"Spoof attempt detected (digital screen Moire pattern: {freq_ratio:.2f}). Please present a live face."
-
-    # C: Glare reflection ratio threshold (Real face skin rarely has large flat glare spots > 0.15)
-    if glare_ratio > 0.18:
-        return False, f"Spoof attempt detected (screen glare reflection: {glare_ratio:.2f}). Please avoid glare on the camera."
 
     return True, None
 
