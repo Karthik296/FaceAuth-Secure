@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://faceauth-backend-imxb.onrender.com";
 
 export default function App() {
   const [view, setView] = useState('home'); // 'home' | 'login' | 'register' | 'dashboard' | 'about' | 'accuracy'
