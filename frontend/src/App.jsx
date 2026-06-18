@@ -1093,85 +1093,136 @@ export default function App() {
             <h2 className="mb-2">About FaceAuth Secure</h2>
             <p className="form-label mb-6">Learn about the technology securing your biometric session</p>
 
-            <div className="about-grid">
+            {/* App Info Banner */}
+            <div style={{
+              background: 'rgba(255, 255, 255, 0.03)',
+              border: '1px solid rgba(223, 206, 184, 0.25)',
+              borderRadius: '20px',
+              padding: '24px',
+              marginBottom: '32px',
+              textAlign: 'left',
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-between',
+              gap: '16px'
+            }}>
+              <div>
+                <h4 style={{ margin: '0 0 6px 0', fontSize: '13px', color: '#8d7a68', textTransform: 'uppercase', letterSpacing: '1px' }}>App Name</h4>
+                <p style={{ margin: 0, fontSize: '20px', fontWeight: '700', color: '#2d3748' }}>FaceAuth Secure Portal</p>
+              </div>
+              <div>
+                <h4 style={{ margin: '0 0 6px 0', fontSize: '13px', color: '#8d7a68', textTransform: 'uppercase', letterSpacing: '1px' }}>Version</h4>
+                <p style={{ margin: 0, fontSize: '20px', fontWeight: '700', color: '#2d3748' }}>v1.0.0</p>
+              </div>
+              <div>
+                <h4 style={{ margin: '0 0 6px 0', fontSize: '13px', color: '#8d7a68', textTransform: 'uppercase', letterSpacing: '1px' }}>Platform Stack</h4>
+                <p style={{ margin: 0, fontSize: '15px', color: '#64748b', fontWeight: '500' }}>React 19 + FastAPI + OpenCV AI</p>
+              </div>
+            </div>
+
+            <h3 style={{ textAlign: 'left', color: '#7c6a59', borderBottom: '1px solid rgba(223, 206, 184, 0.2)', paddingBottom: '8px', marginBottom: '20px' }}>
+              Frontend Implementation (ఫ్రంటెండ్)
+            </h3>
+            <div className="about-grid" style={{ marginBottom: '40px', marginTop: '10px' }}>
               <div className="about-card">
-                <h3>OpenCV YuNet Engine</h3>
+                <h3>React 19 & Vite 8</h3>
                 <p>
-                  Uses a lightweight, state-of-the-art CNN model (YuNet) optimized for real-time face detection on edge devices. It locates faces and landmarks in milliseconds.
+                  Built the portal UI with component-driven state management and hot module replacement for ultra-fast load times.
                 </p>
-                <span className="feature-tag">Face Detection</span>
+                <span className="feature-tag" style={{ background: 'rgba(99, 102, 241, 0.1)', borderColor: 'rgba(99, 102, 241, 0.2)' }}>Framework & Tooling</span>
               </div>
 
               <div className="about-card">
-                <h3>OpenCV SFace Recognizer</h3>
+                <h3>Vanilla CSS & Glassmorphism</h3>
                 <p>
-                  Extracts a highly specific 128-dimensional floating point embedding vector. SFace maps spatial facial structures to a sphere, minimizing vector distance for the same identity.
+                  Designed a high-tech dark theme with modern typography, glowing overlays, blur backdrops, and active micro-animations.
                 </p>
-                <span className="feature-tag">Feature Extraction</span>
+                <span className="feature-tag" style={{ background: 'rgba(99, 102, 241, 0.1)', borderColor: 'rgba(99, 102, 241, 0.2)' }}>Styling & Animation</span>
               </div>
 
               <div className="about-card">
-                <h3>Privacy First Security</h3>
+                <h3>HTML5 Camera Stream</h3>
                 <p>
-                  Your raw webcam photos are NEVER saved. The system stores only the 128d mathematical vector embedding. Biometric templates are protected against reverse-engineering.
+                  Utilized the MediaDevices API and video tags for real-time local webcam scanning and capture of high-definition face snapshots.
                 </p>
-                <span className="feature-tag">Privacy Guarded</span>
+                <span className="feature-tag" style={{ background: 'rgba(99, 102, 241, 0.1)', borderColor: 'rgba(99, 102, 241, 0.2)' }}>Webcam Integration</span>
               </div>
 
               <div className="about-card">
-                <h3>Adaptive Matching Threshold</h3>
+                <h3>Biometric Scanner HUD</h3>
                 <p>
-                  The system runs a cosine similarity match against stored templates. A similarity threshold of <b>0.363</b> guarantees false acceptance rates below 0.01% while ensuring seamless access.
+                  Developed custom scanner animations, laser scanning lines, face-landmark target grids, and a live console diagnostic logs terminal.
                 </p>
-                <span className="feature-tag">High Fidelity</span>
+                <span className="feature-tag" style={{ background: 'rgba(99, 102, 241, 0.1)', borderColor: 'rgba(99, 102, 241, 0.2)' }}>UI/UX Interface</span>
               </div>
 
               <div className="about-card">
-                <h3>Hybrid Security Layer</h3>
+                <h3>Interactive Analytics Dashboard</h3>
                 <p>
-                  In case of webcam blockages, hardware failures, or lighting issues, the system automatically falls back to an email and password login mode, preventing lockouts.
+                  Rendered custom SVG charts and comprehensive logs with search & filters to audit success rates and biometric similarity scores.
                 </p>
-                <span className="feature-tag">Fail-Safe Login</span>
-              </div>
-
-              <div className="about-card">
-                <h3>Real-Time Health Monitoring</h3>
-                <p>
-                  Integrates direct API analytics to monitor matching scores, average similarity ratios, and success rates, allowing administrators to audit device accuracy.
-                </p>
-                <span className="feature-tag">Analytics Dashboard</span>
+                <span className="feature-tag" style={{ background: 'rgba(99, 102, 241, 0.1)', borderColor: 'rgba(99, 102, 241, 0.2)' }}>Data Visualization</span>
               </div>
 
               <div className="about-card">
                 <h3>Interactive Support Chatbot</h3>
                 <p>
-                  A virtual helper widget that walks users through permissions setups, resolves registration conflicts, and addresses common camera connection errors.
+                  Integrated an interactive AI chat helper widget that guides users through webcam permission settings and fallback login procedures.
                 </p>
-                <span className="feature-tag">Help & Diagnostics</span>
+                <span className="feature-tag" style={{ background: 'rgba(99, 102, 241, 0.1)', borderColor: 'rgba(99, 102, 241, 0.2)' }}>Helper Support</span>
+              </div>
+            </div>
+
+            <h3 style={{ textAlign: 'left', color: '#7c6a59', borderBottom: '1px solid rgba(223, 206, 184, 0.2)', paddingBottom: '8px', marginBottom: '20px' }}>
+              Backend Implementation & AI Engine (బ్యాకెండ్)
+            </h3>
+            <div className="about-grid" style={{ marginTop: '10px' }}>
+              <div className="about-card">
+                <h3>FastAPI (Python)</h3>
+                <p>
+                  Developed a high-performance Python ASGI API backend with JSON endpoints and secure schema validation using Pydantic.
+                </p>
+                <span className="feature-tag" style={{ background: 'rgba(16, 185, 129, 0.1)', borderColor: 'rgba(16, 185, 129, 0.2)' }}>API Server</span>
               </div>
 
               <div className="about-card">
-                <h3>High-Tech Scanner HUD</h3>
+                <h3>YuNet Face Detection</h3>
                 <p>
-                  A real-time Heads-Up Display terminal featuring scanning laser grids, facial alignment targets, landmark dots, and a live console outputting system diagnostic logs.
+                  Loaded the lightweight, pre-trained YuNet ONNX model via OpenCV to identify face coordinates and landmark coordinates in milliseconds.
                 </p>
-                <span className="feature-tag">UI/UX Interface</span>
+                <span className="feature-tag" style={{ background: 'rgba(16, 185, 129, 0.1)', borderColor: 'rgba(16, 185, 129, 0.2)' }}>AI Detection</span>
               </div>
 
               <div className="about-card">
-                <h3>Portal Security Controls</h3>
+                <h3>SFace Biometric Recognition</h3>
                 <p>
-                  Empowers users to customize session policies, including Enforce Biometric MFA, Password Fallback activation, and Real-Time Anti-Spoofing controls.
+                  Used the SFace model to extract a highly specific 128-dimensional floating point embedding vector to uniquely match face shapes.
                 </p>
-                <span className="feature-tag">Access Policies</span>
+                <span className="feature-tag" style={{ background: 'rgba(16, 185, 129, 0.1)', borderColor: 'rgba(16, 185, 129, 0.2)' }}>Feature Extraction</span>
               </div>
 
               <div className="about-card">
-                <h3>Audit Log Dashboard</h3>
+                <h3>Liveness & Anti-Spoofing Check</h3>
                 <p>
-                  Maintains detailed logs of system entries, mapping timestamps, authentication modes (Face/Password), similarity scores, and device success rates.
+                  Developed custom texture sharpness checks (Laplacian Variance) and frequency tests (FFT Moire analysis) to prevent screen/photo spoofing.
                 </p>
-                <span className="feature-tag">Activity Trail</span>
+                <span className="feature-tag" style={{ background: 'rgba(16, 185, 129, 0.1)', borderColor: 'rgba(16, 185, 129, 0.2)' }}>Anti-Spoofing Guard</span>
+              </div>
+
+              <div className="about-card">
+                <h3>SQLite Database</h3>
+                <p>
+                  Maintained local SQL tables storing user profile data, vector embedding lists, fallback credentials with SHA-256 hash security, and audit logs.
+                </p>
+                <span className="feature-tag" style={{ background: 'rgba(16, 185, 129, 0.1)', borderColor: 'rgba(16, 185, 129, 0.2)' }}>Database Storage</span>
+              </div>
+
+              <div className="about-card">
+                <h3>Adaptive Vector Matching</h3>
+                <p>
+                  Calculates Cosine Similarity across embeddings. A threshold of 0.363 ensures False Acceptance Rate (FAR) remains below 0.01%.
+                </p>
+                <span className="feature-tag" style={{ background: 'rgba(16, 185, 129, 0.1)', borderColor: 'rgba(16, 185, 129, 0.2)' }}>Authentication Match</span>
               </div>
             </div>
             
