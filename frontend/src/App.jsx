@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const API_BASE = "https://faceauth-backend-imxb.onrender.com";
+const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? "http://localhost:8000"
+  : "https://faceauth-backend-imxb.onrender.com";
 
 export default function App() {
   const [view, setView] = useState('home'); // 'home' | 'login' | 'register' | 'dashboard' | 'about' | 'accuracy'
@@ -100,9 +102,15 @@ export default function App() {
 
   useEffect(() => {
     checkServerHealth();
+    fetchMembers();
     const healthInterval = setInterval(checkServerHealth, 5000);
     return () => clearInterval(healthInterval);
   }, []);
+
+  // Fetch members on view changes to ensure list is always up-to-date
+  useEffect(() => {
+    fetchMembers();
+  }, [view]);
 
   // Fetch Stats Helper
   const fetchStats = async () => {
@@ -528,6 +536,7 @@ export default function App() {
       if (response.ok) {
         setStatusMessage("Registration successful! Redirecting to login...");
         setStatusType("success");
+        fetchMembers();
         setTimeout(() => {
           setView('login');
         }, 2000);
@@ -1121,7 +1130,7 @@ export default function App() {
             </div>
 
             <h3 style={{ textAlign: 'left', color: '#7c6a59', borderBottom: '1px solid rgba(223, 206, 184, 0.2)', paddingBottom: '8px', marginBottom: '20px' }}>
-              Frontend Implementation (ఫ్రంటెండ్)
+              Frontend Implementation
             </h3>
             <div className="about-grid" style={{ marginBottom: '40px', marginTop: '10px' }}>
               <div className="about-card">
@@ -1174,7 +1183,7 @@ export default function App() {
             </div>
 
             <h3 style={{ textAlign: 'left', color: '#7c6a59', borderBottom: '1px solid rgba(223, 206, 184, 0.2)', paddingBottom: '8px', marginBottom: '20px' }}>
-              Backend Implementation & AI Engine (బ్యాకెండ్)
+              Backend Implementation & AI Engine
             </h3>
             <div className="about-grid" style={{ marginTop: '10px' }}>
               <div className="about-card">
